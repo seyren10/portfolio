@@ -1,0 +1,18 @@
+---
+import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/ModeToggle"
+---
+
+<header class="absolute top-0 z-10 w-full bg-background/80 backdrop-blur-sm">
+  <nav class="container mx-auto flex items-center justify-between py-4">
+    <a href="/" class="text-xl font-bold">Roy Victor</a>
+    <div class="flex items-center gap-4">
+      <ModeToggle client:load />
+      <Button client:load variant="outline">Contact</Button>
+    </div>
+  </nav>
+</header>
+<div
+  class="absolute top-14.75 right-0 left-0 h-5 bg-linear-to-r from-transparent via-primary to-transparent opacity-30 blur-md"
+>
+</div>

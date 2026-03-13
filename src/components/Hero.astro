@@ -1,0 +1,60 @@
+---
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { ArrowDown01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons"
+---
+
+<section
+  class="relative container mx-auto grid min-h-svh place-content-center text-center"
+>
+  <div class="space-y-4">
+    <Badge client:load variant="outline" className="py-3 text-sm text-gray-500"
+      ><div class="relative size-2 rounded-full bg-green-400">
+        <div class="absolute inset-0 animate-ping rounded-full bg-green-400">
+        </div>
+      </div>Available for Collaboration
+    </Badge>
+    <h1 class="text-6xl leading-tight font-bold text-balance md:text-7xl">
+      Hi, I'm <span class="text-blue-500">Roy Gagarin</span>
+    </h1>
+    <h2
+      class="text-3xl font-bold underline decoration-blue-500 underline-offset-4 md:text-4xl"
+    >
+      Full Stack Developer
+    </h2>
+    <p
+      class="mx-auto max-w-2xl leading-relaxed text-balance text-muted-foreground"
+    >
+      i specialize in building scalable web applications and web-based systems
+      using modern technologies like <strong class="text-blue-500"
+        >Laravel</strong
+      >, <strong class="text-blue-500">Node.js</strong>, <strong
+        class="text-blue-500">Vue</strong
+      >, and
+      <strong class="text-blue-500">React</strong>.
+    </p>
+    <div class="flex items-center justify-center gap-6">
+      <Button client:load variant="default" className="group pl-4">
+        <span> View Projects </span>
+        <HugeiconsIcon
+          icon={ArrowRight01Icon}
+          className="duration-300 group-hover:translate-x-1"
+        /></Button
+      >
+      <Button
+        client:load
+        variant="outline"
+        className="border-primary text-primary hover:bg-primary/10 hover:text-primary"
+      >
+        Get In Touch
+      </Button>
+    </div>
+    <div
+      class="absolute bottom-20 left-1/2 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2 text-xs text-gray-500"
+    >
+      <span>Scroll to explore</span>
+      <HugeiconsIcon icon={ArrowDown01Icon} />
+    </div>
+  </div>
+</section>
