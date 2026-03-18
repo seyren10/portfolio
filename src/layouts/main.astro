@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css"
+import { BlobBackground } from "@/components/ui/blob-background"
 ---
 
 <script is:inline>
@@ -33,7 +34,10 @@ import "@/styles/global.css"
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Roy Victor Gagarin | Full Stack Developer</title>
   </head>
-  <body class="bg-background p-4 md:p-0 antialiased scroll-smooth">
+  <body
+    class="bg-pattern relative scroll-smooth bg-background p-4 antialiased md:p-0"
+  >
+    <BlobBackground client:load />
     <slot />
   </body>
 </html>

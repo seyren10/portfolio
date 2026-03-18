@@ -130,4 +130,11 @@
   html {
     @apply font-sans;
     }
+  
+    .bg-pattern {
+      background-color: var(--background);
+      opacity: 0.8;
+      background-image: radial-gradient(var(--color-muted) 1.35px, var(--background) 1.35px);
+      background-size: 27px 27px;
+    }
 }
