@@ -38,8 +38,8 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
-    --brand: #e7bc2c;
-    --brand-foreground: #fce8b1;
+    --brand: #8338ec;
+    --brand-foreground: #c3a0f3;
 }
 
 .dark {
@@ -74,8 +74,8 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
-    --brand:  #fce8b1;
-    --brand-foreground: #e7bc2c;
+    --brand: #c3a0f3;
+    --brand-foreground: #8338ec;
 }
 
 @theme inline {
@@ -134,7 +134,7 @@
     .bg-pattern {
       background-color: var(--background);
       opacity: 0.8;
-      background-image: radial-gradient(var(--color-muted) 1.35px, var(--background) 1.35px);
+      background-image: radial-gradient(var(--color-border) 1.35px, var(--background) 1.35px);
       background-size: 27px 27px;
     }
 }
