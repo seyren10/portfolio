@@ -1,19 +1,22 @@
 ---
 import Layout from "@/layouts/main.astro"
-import Header from "@/components/Header.astro"
-import Hero from "@/components/Hero.astro"
-import About from "@/components/About.astro"
-import Skills from "@/components/Skills.astro"
-import Projects from "@/components/Projects.astro"
-import Contact from "@/components/Contact.astro"
-import Footer from "@/components/Footer.astro"
+import AppHeader from "@/components/app/AppHeader.astro"
+import AppHero from "@/components/app/AppHero.astro"
+import AppAbout from "@/components/app/AppAbout.astro"
+import AppSkills from "@/components/app/AppSkills.astro"
+import AppWorkExperience from "@/components/app/AppWorkExperience.astro"
+import AppProjects from "@/components/app/AppProjects.astro"
+import AppContact from "@/components/app/AppContact.astro"
+import AppFooter from "@/components/app/AppFooter.astro"
 ---
 
 <Layout>
-  <Header />
-  <Hero />
-  <About />
-  <Skills />
-  <Contact />
-  <Footer />
+  <AppHeader />
+  <AppHero />
+  <AppProjects />
+  <AppWorkExperience />
+  <AppSkills />
+  <AppAbout />
+  <AppContact />
+  <AppFooter />
 </Layout>

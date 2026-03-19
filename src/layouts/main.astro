@@ -1,6 +1,7 @@
 ---
 import "@/styles/global.css"
 import { BlobBackground } from "@/components/ui/blob-background"
+import { SEO } from "astro-seo"
 ---
 
 <script is:inline>
@@ -29,15 +30,30 @@ import { BlobBackground } from "@/components/ui/blob-background"
 
 <html lang="en">
   <head>
+    <SEO
+      title="Roy Victor Gagarin | Full Stack Developer"
+      description="Full-Stack Web Developer specializing in building web-based systems, internal tools, and APIs using Laravel, Node.js, Vue, and React."
+      openGraph={{
+        basic: {
+          title: "Roy Victor Gagarin | Full-Stack Web Developer",
+          type: "website",
+          image: "https://gagarinroyvictor.site/logo.svg",
+        },
+      }}
+    />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Roy Victor Gagarin | Full Stack Developer</title>
   </head>
-  <body
-    class="bg-pattern relative scroll-smooth bg-background p-4 antialiased md:p-0"
-  >
+  <body class="bg-pattern relative bg-background antialiased">
     <BlobBackground client:load />
     <slot />
   </body>
 </html>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>

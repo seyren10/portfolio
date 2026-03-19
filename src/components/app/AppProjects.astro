@@ -1,0 +1,156 @@
+---
+import AppBadge from "@/components/app/AppBadge.astro"
+import ExpressIcon from "@/assets/express-svgrepo-com.svg"
+import MySqlIcon from "@/assets/mysql-logo-svgrepo-com.svg"
+import MongoDbIcon from "@/assets/mongo-svgrepo-com.svg"
+import NodeJsIcon from "@/assets/nodejs-logo-svgrepo-com.svg"
+import LaravelIcon from "@/assets/laravel-svgrepo-com.svg"
+import ReactJsIcon from "@/assets/react.svg"
+import ReactRouterIcon from "@/assets/react-router-svgrepo-com.svg"
+import ReduxIcon from "@/assets/Redux.svg"
+import RedisIcon from "@/assets/Redis.svg"
+import VuejsIcon from "@/assets/vuejs.svg"
+import PiniaIcon from "@/assets/pinia.svg"
+import SocketIOIcon from "@/assets/Socket.io.svg"
+import VuetifyIcon from "@/assets/brand-vuetify-svgrepo-com.svg"
+import { Button } from "@/components/ui/button"
+import { Github, Share04Icon } from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import { ServifiLinks } from "@/components/ServifiLinks"
+import { AMSGallery } from "@/components/AMSGallery"
+import { ServifiGallery } from "@/components/ServifiGallery"
+---
+
+<section id="projects" class="scroll-m-20 p-4 md:p-0">
+  <div class="container mx-auto max-w-4xl space-y-8 py-16">
+    <h2 class="text-center text-4xl font-bold text-blue-500 md:text-5xl">
+      Projects
+    </h2>
+
+    <ul class="space-y-6">
+      <li class="rounded-lg border bg-background shadow">
+        <div class="grid gap-4 p-4 md:grid-cols-[1fr_20rem]">
+          <div class="order-2 space-y-4 md:order-1">
+            <div>
+              <h3 class="text-2xl leading-loose font-bold">
+                Asset Management System
+              </h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                A web-based system developed to manage and track company assets
+                such as laptops, PCs, and tablets.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-medium">Key Features:</p>
+              <ul
+                class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+              >
+                <li>Tracks asset assignment to employees</li>
+                <li>Maintains history of previous asset ownership</li>
+                <li>
+                  Displays asset details including department and location
+                </li>
+                <li>Provides centralized management of company devices</li>
+              </ul>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+              <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
+              <AppBadge src={MySqlIcon} alt="MySQL">MySQL</AppBadge>
+              <AppBadge src={VuejsIcon} alt="Vue.js">Vue.js</AppBadge>
+              <AppBadge src={VuetifyIcon} alt="Vuetify UI">Vuetify UI</AppBadge>
+              <AppBadge src={PiniaIcon} alt="Pinia.js">Pinia.js</AppBadge>
+            </div>
+          </div>
+          <div
+            class="order:1 overflow-hidden rounded-lg border shadow md:order-2"
+          >
+            <AMSGallery client:load />
+          </div>
+        </div>
+
+        <hr class="mt-0!" />
+        <div class="p-4">
+          <a
+            href="https://github.com/seyren10/mkta-EIS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button client:visible variant="outline">
+              <HugeiconsIcon icon={Github} className="size-4" />
+              View Code
+            </Button>
+          </a>
+        </div>
+      </li>
+      <li class="rounded-lg border bg-background shadow">
+        <div class="grid gap-6 p-4 md:grid-cols-[1fr_20rem]">
+          <div class="order-2 space-y-4 md:order-1">
+            <div>
+              <h3 class="text-2xl leading-loose font-bold">Servifi</h3>
+              <p class="text-slate-600 dark:text-slate-400">
+                A restaurant management system designed for Korean BBQ
+                restaurants offering unlimited dining, featuring QR-based
+                ordering and real-time table service.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="font-medium">Key Features:</p>
+              <ul
+                class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+              >
+                <li>QR code-based ordering system for customers</li>
+                <li>
+                  Real-time order updates and table service requests (e.g. call
+                  waiter, bill out)
+                </li>
+                <li>Table management system</li>
+                <li>Food and category management</li>
+                <li>Dashboard with insights such as most ordered items</li>
+              </ul>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+              <AppBadge src={NodeJsIcon} alt="Node.js">Node.js</AppBadge>
+              <AppBadge src={ExpressIcon} alt="Express.js">Express.js</AppBadge>
+              <AppBadge src={RedisIcon} alt="Redis">Redis</AppBadge>
+              <AppBadge src={MongoDbIcon} alt="MongoDB">MongoDB</AppBadge>
+              <AppBadge src={SocketIOIcon} alt="Socket.io">Socket.io</AppBadge>
+              <AppBadge src={ReactJsIcon} alt="React.js">React.js</AppBadge>
+              <AppBadge src={ReactRouterIcon} alt="React Router"
+                >React Router</AppBadge
+              >
+              <AppBadge src={ReduxIcon} alt="Redux">Redux</AppBadge>
+            </div>
+          </div>
+          <div
+            class="order-1 aspect-square overflow-hidden rounded-lg border shadow md:order-2"
+          >
+            <ServifiGallery client:load />
+          </div>
+        </div>
+
+        <hr class="mt-0!" />
+        <div class="flex flex-wrap items-center gap-4 p-4">
+          <ServifiLinks client:load />
+          <a
+            href="https://servifi-app.vercel.app/admin/signin"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button client:visible>
+              <HugeiconsIcon icon={Share04Icon} className="size-4" />
+              Live Demo
+            </Button>
+          </a>
+          <div
+            class="inline-flex flex-wrap gap-2 rounded-xl border p-2 text-xs text-slate-600 dark:text-slate-400"
+          >
+            <span
+              >Username: <span class="font-medium">test@example.com</span></span
+            >
+            <span>Password: <span class="font-medium">password</span></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

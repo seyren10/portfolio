@@ -1,0 +1,30 @@
+---
+import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/ModeToggle"
+import { Image } from "astro:assets"
+---
+
+<header
+  class="fixed top-0 z-10 w-full border-b bg-background/80 px-4 backdrop-blur-sm"
+>
+  <nav class="container mx-auto flex items-center justify-between py-4">
+    <a href="#" class="text-xl font-bold">
+      <img src="/logo.svg" alt="Roy Victor" class="size-8 md:size-10" />
+    </a>
+    <div class="flex shrink-0 items-center gap-4">
+      <ModeToggle client:load />
+      <a
+        href="/Roy_Victor_Gagarin_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          client:load
+          tabIndex={0}
+          className="relative before:absolute before:inset-0 before:z-[-1] before:animate-subtle-ping before:rounded-full before:bg-primary before:content-['']"
+          >Download CV</Button
+        >
+      </a>
+    </div>
+  </nav>
+</header>

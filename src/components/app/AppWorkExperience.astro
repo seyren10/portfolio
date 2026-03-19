@@ -1,0 +1,176 @@
+---
+import AppBadge from "@/components/app/AppBadge.astro"
+import LaravelIcon from "@/assets/laravel-svgrepo-com.svg"
+import MySqlIcon from '@/assets/mysql-logo-svgrepo-com.svg'
+import ReactJsIcon from "@/assets/react.svg"
+import VuejsIcon from "@/assets/vuejs.svg"
+import TanstackIcon from "@/assets/tanstack.png"
+import PiniaIcon from "@/assets/pinia.svg"
+import ShadcnIcon from "@/assets/shadcn-icon.png"
+import { Badge } from "../ui/badge"
+---
+
+<section id="work-experience" class="scroll-m-20 p-4 md:p-0">
+  <div class="container mx-auto max-w-4xl space-y-8 py-16">
+    <h2 class="text-center text-4xl font-bold text-blue-500 md:text-5xl">
+      Work Experience
+    </h2>
+
+    <ul class="space-y-6">
+      <!-- Viptutors Co -->
+      <li class="rounded-lg border bg-background shadow">
+        <div class="space-y-4 p-4">
+          <div class="flex flex-wrap justify-between gap-2">
+            <div>
+              <h3 class="text-2xl font-bold">Viptutors Co</h3>
+              <p class="text-sm font-semibold text-blue-500 md:text-lg">
+                Full-Stack Web Developer (Contract · Remote)
+              </p>
+            </div>
+            <Badge
+              variant="outline"
+              className="bg-background py-3 text-sm text-slate-600 dark:text-slate-400"
+            >
+              October 2025 – March 2026
+            </Badge>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-400">
+            Contributed to core MVP features of a startup platform, focusing on
+            backend development, frontend integration, and real-time system
+            improvements.
+          </p>
+
+          <div class="space-y-3">
+            <p class="font-semibold">Key Contributions:</p>
+            <ul
+              class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+            >
+              <li>Developed booking system features using Laravel and Vue</li>
+              <li>
+                Integrated APIs and collaborated with designers to implement UI
+                from Figma
+              </li>
+              <li>
+                Improved messaging system by replacing polling with real-time
+                communication using WebSockets (Laravel Reverb)
+              </li>
+              <li>
+                Suggested and implemented frontend optimizations:
+                <ul class="list-circle mt-1 ml-4 space-y-0.5">
+                  <li>Lazy loading routes</li>
+                  <li>Improved data fetching using TanStack Query</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
+            <AppBadge src={LaravelIcon} alt="WebSockets">Reverb</AppBadge>
+            <AppBadge src={MySqlIcon} alt="MySQL">MySQL</AppBadge>
+            <AppBadge src={VuejsIcon} alt="Vue.js">Vue.js</AppBadge>
+            <AppBadge src={PiniaIcon} alt="Pinia.js">Pinia.js</AppBadge>
+            <AppBadge src={ShadcnIcon} alt="Shadcn UI">Shadcn UI</AppBadge>
+            <AppBadge src={TanstackIcon} alt="TanStack Query"
+              >TanStack Query</AppBadge
+            >
+          </div>
+        </div>
+      </li>
+      <!-- MK Themed Attractions -->
+      <li class="rounded-lg border bg-background shadow">
+        <div class="space-y-4 p-4">
+          <div class="flex flex-wrap justify-between gap-2">
+            <div>
+              <h3 class="text-2xl font-bold">
+                MK Themed Attractions Philippines
+              </h3>
+              <p class="text-sm font-semibold text-blue-500 md:text-lg">
+                Full-Stack Web Developer (Full-time · Remote)
+              </p>
+            </div>
+            <Badge
+              variant="outline"
+              className="bg-background py-3 text-sm text-slate-600 dark:text-slate-400"
+            >
+              August 2023 – September 2025
+            </Badge>
+          </div>
+
+          <p class="text-slate-600 dark:text-slate-400">
+            Worked on multiple internal systems used across the company,
+            contributing to both frontend and backend development with a strong
+            focus on improving performance and usability.
+          </p>
+
+          <div class="space-y-3">
+            <p class="font-semibold">Key Contributions:</p>
+            <ul
+              class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+            >
+              <li>
+                Led frontend development across multiple internal applications
+              </li>
+              <li>
+                Contributed to backend development using Laravel, including
+                performance optimization and query improvements
+              </li>
+              <li>
+                Improved existing systems by applying modern Laravel practices
+                and optimizations
+              </li>
+            </ul>
+          </div>
+
+          <div class="space-y-3">
+            <p class="font-semibold">Projects:</p>
+            <ul class="space-y-3 text-sm">
+              <li class="ml-4">
+                <p class="font-medium">MKTA TMS (Task Management System)</p>
+                <ul
+                  class="mt-1 ml-4 list-disc space-y-0.5 text-slate-600 marker:text-primary dark:text-slate-400"
+                >
+                  <li>Developed the frontend architecture and UI</li>
+                  <li>Contributed to backend queueing system</li>
+                  <li>
+                    Optimized slow database queries using indexing and
+                    pagination
+                  </li>
+                </ul>
+              </li>
+              <li class="ml-4">
+                <p class="font-medium">MKTA Catalog (Product Catalog System)</p>
+                <ul
+                  class="mt-1 ml-4 list-disc space-y-0.5 text-slate-600 marker:text-primary dark:text-slate-400"
+                >
+                  <li>Built and maintained frontend including landing page</li>
+                  <li>
+                    Developed a catalog system similar to e-commerce (without
+                    pricing)
+                  </li>
+                </ul>
+              </li>
+              <li class="ml-4">
+                <p class="font-medium">
+                  MKTA HRIS (Human Resource Information System)
+                </p>
+                <ul
+                  class="mt-1 ml-4 list-disc space-y-0.5 text-slate-600 marker:text-primary dark:text-slate-400"
+                >
+                  <li>Developed frontend using React.js</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
+            <AppBadge src={ReactJsIcon} alt="React.js">React.js</AppBadge>
+            <AppBadge src={VuejsIcon} alt="Vue.js">Vue.js</AppBadge>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>

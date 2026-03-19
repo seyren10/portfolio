@@ -1,0 +1,96 @@
+---
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { HugeiconsIcon } from "@hugeicons/react"
+import {
+  ArrowDown01Icon,
+  ArrowRight01Icon,
+  GithubIcon,
+  Linkedin02Icon,
+  Mail01Icon,
+} from "@hugeicons/core-free-icons"
+---
+
+<section
+  class="relative container mx-auto grid min-h-svh place-content-center p-4 text-center md:p-0"
+>
+  <div class="space-y-4">
+    <Badge
+      client:load
+      variant="outline"
+      className="bg-background py-3 text-sm text-slate-600 dark:text-slate-400"
+      ><div class="relative size-2 rounded-full bg-green-400">
+        <div class="absolute inset-0 animate-ping rounded-full bg-green-400">
+        </div>
+      </div>Available for Collaboration
+    </Badge>
+    <h1 class="text-5xl leading-tight font-bold text-balance md:text-7xl">
+      Roy Gagarin
+    </h1>
+    <h2 class="text-3xl font-bold text-blue-500 md:text-4xl">
+      Full Stack Developer
+    </h2>
+    <p
+      class="mx-auto max-w-2xl text-lg leading-relaxed text-balance text-slate-600 dark:text-slate-400"
+    >
+      I specialize in building scalable web applications and web-based systems
+      using modern technologies like <strong class="text-blue-500"
+        >Laravel</strong
+      >, <strong class="text-blue-500">Node.js</strong>, <strong
+        class="text-blue-500">Vue</strong
+      >, and
+      <strong class="text-blue-500">React</strong>.
+    </p>
+    <div class="flex items-center justify-center gap-6">
+      <a href="#projects">
+        <Button client:load variant="default" className="group pl-4" tabIndex={0}>
+          <span> View Projects </span>
+          <HugeiconsIcon
+            icon={ArrowRight01Icon}
+            className="duration-300 group-hover:translate-x-1"
+          /></Button
+        >
+      </a>
+      <a href="#contact">
+        <Button
+          client:load
+          variant="outline"
+          className="border-primary text-primary dark:text-primary-foreground hover:bg-primary/10 hover:text-primary"
+        >
+          Get In Touch
+        </Button>
+      </a>
+    </div>
+    <div class="mt-6 flex items-center justify-center gap-4">
+      <a
+        href="https://github.com/seyren10"
+        target="_blank"
+        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+        aria-label="GitHub"
+      >
+        <HugeiconsIcon icon={GithubIcon} className="size-5" />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/roy-gagarin-38b790261"
+        target="_blank"
+        aria-label="LinkedIn"
+        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+      >
+        <HugeiconsIcon icon={Linkedin02Icon} className="size-5" />
+      </a>
+      <a
+        href="mailto:gagarinroyvictor@gmail.com"
+        aria-label="email"
+        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+      >
+        <HugeiconsIcon icon={Mail01Icon} className="size-5" />
+      </a>
+    </div>
+    <div
+      class="absolute bottom-20 left-1/2 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2 text-xs text-slate-600 dark:text-slate-400"
+    >
+      <span>Scroll to explore</span>
+      <HugeiconsIcon icon={ArrowDown01Icon} />
+    </div>
+  </div>
+</section>

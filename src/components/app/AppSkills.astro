@@ -1,0 +1,119 @@
+---
+import {
+  CodeSimpleIcon,
+  DatabaseIcon,
+  Settings03Icon,
+  Wrench01Icon,
+} from "@hugeicons/core-free-icons"
+import { HugeiconsIcon } from "@hugeicons/react"
+import AppBadge from "@/components/app/AppBadge.astro"
+import VueJsIcon from "@/assets/vuejs.svg"
+import ReactJsIcon from "@/assets/react.svg"
+import PiniaIcon from "@/assets/pinia.svg"
+import ReactRouterIcon from "@/assets/react-router-svgrepo-com.svg"
+import TanstackIcon from "@/assets/tanstack.png"
+import JavascriptIcon from "@/assets/javascript-logo-svgrepo-com.svg"
+import TypescriptIcon from "@/assets/typescript-icon-svgrepo-com.svg"
+import CssIcon from "@/assets/css3-svgrepo-com.svg"
+import HtmlIcon from "@/assets/html-5-svgrepo-com.svg"
+import TailwindIcon from "@/assets/tailwind-css.svg"
+import ShadcnIcon from "@/assets/shadcn-icon.png"
+import VuetifyIcon from "@/assets/brand-vuetify-svgrepo-com.svg"
+import AstroIcon from "@/assets/Astro.svg"
+import LaravelIcon from "@/assets/laravel-svgrepo-com.svg"
+import PhpIcon from "@/assets/PHP.svg"
+import NodejsIcon from "@/assets/nodejs-logo-svgrepo-com.svg"
+import ExpressIcon from "@/assets/express-svgrepo-com.svg"
+import MySqlIcon from "@/assets/mysql-logo-svgrepo-com.svg"
+import MongoDbIcon from "@/assets/mongo-svgrepo-com.svg"
+import GitIcon from "@/assets/git-svgrepo-com.svg"
+import GithubIcon from "@/assets/github-color-svgrepo-com.svg"
+import DockerIcon from "@/assets/docker-svgrepo-com.svg"
+import ReduxIcon from "@/assets/Redux.svg"
+import RedisIcon from "@/assets/Redis.svg"
+---
+
+<section id="skills" class="scroll-m-20 p-4 md:p-0">
+  <div class="container mx-auto max-w-4xl space-y-8 py-16 text-center">
+    <h2 class="text-4xl font-bold text-blue-500 md:text-5xl">
+      Skills & Technologies
+    </h2>
+    <ul class="mt-10 grid gap-6 text-left md:grid-cols-2">
+      <li class="space-y-6 rounded-lg border bg-background p-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
+          >
+            <HugeiconsIcon icon={CodeSimpleIcon} />
+          </div>
+          <h3 class="text-xl font-bold">Frontend</h3>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <AppBadge src={VueJsIcon} alt="Vue.js">Vue.js</AppBadge>
+          <AppBadge src={ReactJsIcon} alt="React.js">React.js</AppBadge>
+          <AppBadge src={AstroIcon} alt="Astro.js">Astro.js</AppBadge>
+          <AppBadge src={HtmlIcon} alt="HTML">HTML</AppBadge>
+          <AppBadge src={CssIcon} alt="CSS">CSS</AppBadge>
+          <AppBadge src={JavascriptIcon} alt="JavaScript">JavaScript</AppBadge>
+          <AppBadge src={TailwindIcon} alt="Tailwind CSS">Tailwind CSS</AppBadge
+          >
+          <AppBadge src={TypescriptIcon} alt="TypeScript">TypeScript</AppBadge>
+          <AppBadge src={ShadcnIcon} alt="ShadCN UI">ShadCN UI</AppBadge>
+          <AppBadge src={VuetifyIcon} alt="Vuetify UI">Vuetify UI</AppBadge>
+          <AppBadge src={PiniaIcon} alt="Pinia.js">Pinia.js</AppBadge>
+          <AppBadge src={ReduxIcon} alt="Redux">Redux</AppBadge>
+          <AppBadge src={ReactRouterIcon} alt="React Router"
+            >React Router</AppBadge
+          >
+          <AppBadge src={TanstackIcon} alt="TanStack">TanStack</AppBadge>
+        </div>
+      </li>
+      <li class="space-y-6 rounded-lg border bg-background p-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
+          >
+            <HugeiconsIcon icon={Settings03Icon} />
+          </div>
+          <h3 class="text-xl font-bold">Backend</h3>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
+          <AppBadge src={PhpIcon} alt="PHP">PHP</AppBadge>
+          <AppBadge src={NodejsIcon} alt="Node.js">Node.js</AppBadge>
+          <AppBadge src={ExpressIcon} alt="Express.js">Express.js</AppBadge>
+          <AppBadge src={RedisIcon} alt="Redis">Redis</AppBadge>
+        </div>
+      </li>
+      <li class="space-y-6 rounded-lg border bg-background p-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
+          >
+            <HugeiconsIcon icon={DatabaseIcon} />
+          </div>
+          <h3 class="text-xl font-bold">Databases</h3>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <AppBadge src={MySqlIcon} alt="MySQL">MySQL</AppBadge>
+          <AppBadge src={MongoDbIcon} alt="MongoDB">MongoDB</AppBadge>
+        </div>
+      </li>
+      <li class="space-y-6 rounded-lg border bg-background p-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div
+            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
+          >
+            <HugeiconsIcon icon={Wrench01Icon} />
+          </div>
+          <h3 class="text-xl font-bold">Tools & Others</h3>
+        </div>
+        <div class="flex flex-wrap items-center gap-4">
+          <AppBadge src={GitIcon} alt="Git">Git</AppBadge>
+          <AppBadge src={GithubIcon} alt="GitHub">GitHub</AppBadge>
+          <AppBadge src={DockerIcon} alt="Docker">Docker</AppBadge>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
