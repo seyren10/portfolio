@@ -2,6 +2,7 @@
 import "@/styles/global.css"
 import { BlobBackground } from "@/components/ui/blob-background"
 import { SEO } from "astro-seo"
+import "@polgubau/astro-reveal/styles"
 ---
 
 <script is:inline>
@@ -49,6 +50,10 @@ import { SEO } from "astro-seo"
   <body class="bg-pattern relative bg-background antialiased">
     <BlobBackground client:load />
     <slot />
+
+    <script>
+      import "@polgubau/astro-reveal"
+    </script>
   </body>
 </html>
 

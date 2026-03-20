@@ -14,7 +14,7 @@ import {
 <section
   class="relative container mx-auto grid min-h-svh place-content-center p-4 text-center md:p-0"
 >
-  <div class="space-y-4">
+  <div class="space-y-4" data-stagger="200">
     <Badge
       client:load
       variant="outline"
@@ -24,14 +24,15 @@ import {
         </div>
       </div>Available for Collaboration
     </Badge>
-    <h1 class="text-5xl leading-tight font-bold text-balance md:text-7xl">
+    <h1 class="text-5xl leading-tight font-bold text-balance md:text-7xl" data-reveal="bottom">
       Roy Gagarin
     </h1>
-    <h2 class="text-3xl font-bold text-blue-500 md:text-4xl">
+    <h2 class="text-3xl font-bold text-blue-500 md:text-4xl" data-reveal="bottom">
       Full Stack Developer
     </h2>
     <p
       class="mx-auto max-w-2xl text-lg leading-relaxed text-balance text-slate-600 dark:text-slate-400"
+      data-reveal="bottom"
     >
       I specialize in building scalable web applications and web-based systems
       using modern technologies like <strong class="text-blue-500"
@@ -41,7 +42,7 @@ import {
       >, and
       <strong class="text-blue-500">React</strong>.
     </p>
-    <div class="flex items-center justify-center gap-6">
+    <div class="flex items-center justify-center gap-6" data-reveal="bottom">
       <a href="#projects">
         <Button client:load variant="default" className="group pl-4" tabIndex={0}>
           <span> View Projects </span>
@@ -61,7 +62,7 @@ import {
         </Button>
       </a>
     </div>
-    <div class="mt-6 flex items-center justify-center gap-4">
+    <div class="mt-6 flex items-center justify-center gap-4" data-reveal="bottom">
       <a
         href="https://github.com/seyren10"
         target="_blank"
@@ -88,6 +89,7 @@ import {
     </div>
     <div
       class="absolute bottom-20 left-1/2 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2 text-xs text-slate-600 dark:text-slate-400"
+      data-reveal="bottom"
     >
       <span>Scroll to explore</span>
       <HugeiconsIcon icon={ArrowDown01Icon} />

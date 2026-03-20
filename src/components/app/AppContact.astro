@@ -8,8 +8,8 @@ import { Button } from "@/components/ui/button"
   <div class="container mx-auto max-w-4xl space-y-12 py-16 text-center">
     <h2 class="text-4xl font-bold text-blue-500 md:text-5xl">Get In Touch</h2>
 
-    <ul class="mt-10 grid gap-6 text-left md:grid-cols-3">
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm">
+    <ul class="mt-10 grid gap-6 text-left md:grid-cols-3" data-stagger="200">
+      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
         <div class="flex items-center gap-3">
           <div
             class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
@@ -18,7 +18,9 @@ import { Button } from "@/components/ui/button"
           </div>
           <div>
             <h3 class="text-xl font-bold">Email</h3>
-            <p class="text-slate-600 dark:text-slate-400">Get in touch via email</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              Get in touch via email
+            </p>
           </div>
         </div>
         <a
@@ -28,7 +30,7 @@ import { Button } from "@/components/ui/button"
           gagarinroyvictor@gmail.com
         </a>
       </li>
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm">
+      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
         <div class="flex items-center gap-3">
           <div
             class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
@@ -47,7 +49,7 @@ import { Button } from "@/components/ui/button"
           (+63) 956 304 0025
         </a>
       </li>
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm">
+      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
         <div class="flex items-center gap-3">
           <div
             class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
@@ -56,7 +58,9 @@ import { Button } from "@/components/ui/button"
           </div>
           <div>
             <h3 class="text-xl font-bold">Location</h3>
-            <p class="text-slate-600 dark:text-slate-400">Based in Tarlac, PH</p>
+            <p class="text-slate-600 dark:text-slate-400">
+              Based in Tarlac, PH
+            </p>
           </div>
         </div>
         <span class="font-bold text-blue-500">
@@ -65,12 +69,16 @@ import { Button } from "@/components/ui/button"
       </li>
     </ul>
 
-    <div class="contact-bg relative space-y-4 rounded-xl p-20 overflow-hidden bg-background isolate">
+    <div
+      class="contact-bg relative isolate space-y-4 overflow-hidden rounded-xl bg-background md:p-20 p-6"
+      data-reveal="bottom"
+      data-delay="600"
+    >
       <h3 class="text-3xl font-bold md:text-5xl">
         Ready to build something amazing?
       </h3>
       <p
-        class="mx-auto max-w-[65ch] text-base md:text-lg leading-relaxed text-balance text-slate-600 dark:text-slate-200"
+        class="mx-auto max-w-[65ch] text-base leading-relaxed text-balance text-slate-600 md:text-lg dark:text-slate-200"
       >
         I'm always open to discussing new projects, creative ideas or
         opportunities to be part of your vision.
@@ -79,8 +87,15 @@ import { Button } from "@/components/ui/button"
         <a href="mailto:gagarinroyvictor@gmail.com">
           <Button client:visible size="lg"> Send me an email </Button>
         </a>
-        <a href="#">
-          <Button client:visible size="lg"> View my work </Button>
+        <a href="/Roy_Victor_Gagarin_CV.pdf" download>
+          <Button
+            client:visible
+            size="lg"
+            variant="outline"
+            className="border-primary text-primary hover:bg-primary/10 hover:text-primary dark:text-primary-foreground"
+          >
+            Download CV
+          </Button>
         </a>
       </div>
     </div>
@@ -96,7 +111,11 @@ import { Button } from "@/components/ui/button"
     background-color: var(--background);
     opacity: 0.3;
     background-image:
-      repeating-radial-gradient(circle at 0 0, transparent 0, var(--background) 40px),
+      repeating-radial-gradient(
+        circle at 0 0,
+        transparent 0,
+        var(--background) 40px
+      ),
       repeating-linear-gradient(var(--background), var(--color-blue-500));
   }
 </style>

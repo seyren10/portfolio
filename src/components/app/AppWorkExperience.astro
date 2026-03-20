@@ -1,13 +1,16 @@
 ---
 import AppBadge from "@/components/app/AppBadge.astro"
 import LaravelIcon from "@/assets/laravel-svgrepo-com.svg"
-import MySqlIcon from '@/assets/mysql-logo-svgrepo-com.svg'
+import MySqlIcon from "@/assets/mysql-logo-svgrepo-com.svg"
 import ReactJsIcon from "@/assets/react.svg"
 import VuejsIcon from "@/assets/vuejs.svg"
 import TanstackIcon from "@/assets/tanstack.png"
 import PiniaIcon from "@/assets/pinia.svg"
 import ShadcnIcon from "@/assets/shadcn-icon.png"
 import { Badge } from "../ui/badge"
+import VIPtutorsLogo from "@/assets/viptutors_logo.png"
+import MKLogo from "@/assets/mk_logo.svg"
+import { Image } from "astro:assets"
 ---
 
 <section id="work-experience" class="scroll-m-20 p-4 md:p-0">
@@ -16,16 +19,26 @@ import { Badge } from "../ui/badge"
       Work Experience
     </h2>
 
-    <ul class="space-y-6">
+    <ul class="space-y-6" data-stagger="200">
       <!-- Viptutors Co -->
-      <li class="rounded-lg border bg-background shadow">
+      <li class="rounded-lg border bg-background shadow" data-reveal="right">
         <div class="space-y-4 p-4">
           <div class="flex flex-wrap justify-between gap-2">
-            <div>
-              <h3 class="text-2xl font-bold">Viptutors Co</h3>
-              <p class="text-sm font-semibold text-blue-500 md:text-lg">
-                Full-Stack Web Developer (Contract · Remote)
-              </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="grid aspect-square max-w-20 place-content-center rounded-xl border bg-white"
+              >
+                <Image src={VIPtutorsLogo} alt="Viptutors Co" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold">Viptutors Co</h3>
+                <p class="text-sm font-semibold text-blue-500 md:text-lg">
+                  Full-Stack Web Developer (Contract · Remote)
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  Franklin Building, 124 Goswell Road, London
+                </p>
+              </div>
             </div>
             <Badge
               variant="outline"
@@ -79,16 +92,26 @@ import { Badge } from "../ui/badge"
         </div>
       </li>
       <!-- MK Themed Attractions -->
-      <li class="rounded-lg border bg-background shadow">
+      <li class="rounded-lg border bg-background shadow" data-reveal="left">
         <div class="space-y-4 p-4">
           <div class="flex flex-wrap justify-between gap-2">
-            <div>
-              <h3 class="text-2xl font-bold">
-                MK Themed Attractions Philippines
-              </h3>
-              <p class="text-sm font-semibold text-blue-500 md:text-lg">
-                Full-Stack Web Developer (Full-time · Remote)
-              </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="grid aspect-square max-w-20 place-content-center rounded-xl border bg-white"
+              >
+                <Image src={MKLogo} alt="MK Themed Attractions Philippines" />
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold">
+                  MK Themed Attractions Philippines
+                </h3>
+                <p class="text-sm font-semibold text-blue-500 md:text-lg">
+                  Full-Stack Web Developer (Full-time · Remote)
+                </p>
+                <p class="text-xs text-slate-600 dark:text-slate-400">
+                  EPZA, Angeles City, Pampanga
+                </p>
+              </div>
             </div>
             <Badge
               variant="outline"

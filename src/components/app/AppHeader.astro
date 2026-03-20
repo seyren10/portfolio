@@ -1,30 +1,252 @@
 ---
-import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/ModeToggle"
-import { Image } from "astro:assets"
+import { Button } from "@/components/ui/button"
 ---
 
 <header
-  class="fixed top-0 z-10 w-full border-b bg-background/80 px-4 backdrop-blur-sm"
+  id="app-header"
+  class="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 px-4 backdrop-blur-md transition-all duration-300"
 >
   <nav class="container mx-auto flex items-center justify-between py-4">
-    <a href="#" class="text-xl font-bold">
+    <!-- Logo -->
+    <a
+      href="#"
+      class="shrink-0 transition-opacity hover:opacity-80"
+      aria-label="Roy Victor home"
+    >
       <img src="/logo.svg" alt="Roy Victor" class="size-8 md:size-10" />
     </a>
-    <div class="flex shrink-0 items-center gap-4">
+
+    <!-- Desktop Nav Links -->
+    <ul class="hidden items-center gap-1 md:flex" role="list">
+      {
+        [
+          { label: "Projects", href: "#projects" },
+          { label: "Experience", href: "#work-experience" },
+          { label: "Skills", href: "#skills" },
+          { label: "About", href: "#about" },
+          { label: "Contact", href: "#contact" },
+        ].map(({ label, href }) => (
+          <li>
+            <a
+              href={href}
+              class="nav-link relative px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-blue-500 after:transition-all after:duration-300 hover:text-foreground hover:after:w-4/5"
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Right side: ModeToggle + CV Button + Hamburger -->
+    <div class="flex shrink-0 items-center gap-3">
       <ModeToggle client:load />
-      <a
-        href="/Roy_Victor_Gagarin_CV.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+
+      <a href="/Roy_Victor_Gagarin_CV.pdf" download class="hidden md:block">
         <Button
           client:load
           tabIndex={0}
           className="relative before:absolute before:inset-0 before:z-[-1] before:animate-subtle-ping before:rounded-full before:bg-primary before:content-['']"
-          >Download CV</Button
         >
+          Download CV
+        </Button>
       </a>
+
+      <!-- Hamburger button (mobile only) -->
+      <button
+        id="hamburger-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        class="relative flex size-9 flex-col items-center justify-center gap-1.25 rounded-full border border-border/60  bg-input/30 hover:bg-input/50 hover:text-foreground transition-colors md:hidden"
+      >
+        <span
+          class="hamburger-line block h-px w-5 rounded-full bg-foreground transition-all duration-300 ease-in-out"
+        ></span>
+        <span
+          class="hamburger-line block h-px w-5 rounded-full bg-foreground transition-all duration-300 ease-in-out"
+        ></span>
+        <span
+          class="hamburger-line block h-px w-5 rounded-full bg-foreground transition-all duration-300 ease-in-out"
+        ></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div
+    id="mobile-menu"
+    role="menu"
+    aria-label="Mobile navigation"
+    class="mobile-menu-closed overflow-hidden border-t border-border/40 md:hidden"
+  >
+    <ul class="container mx-auto flex flex-col gap-1 py-4" role="list">
+      {
+        [
+          { label: "Projects", href: "#projects" },
+          { label: "Experience", href: "#work-experience" },
+          { label: "Skills", href: "#skills" },
+          { label: "About", href: "#about" },
+          { label: "Contact", href: "#contact" },
+        ].map(({ label, href }, i) => (
+          <li>
+            <a
+              href={href}
+              role="menuitem"
+              class="mobile-nav-link flex items-center gap-3 rounded-md px-3 py-3 text-sm font-medium text-muted-foreground transition-colors duration-150 hover:bg-accent hover:text-foreground"
+              style={`--delay: ${i * 40}ms`}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+
+      <li class="mt-3 border-t border-border/40 pt-3">
+        <a href="/Roy_Victor_Gagarin_CV.pdf" download class="block w-full">
+          <Button client:load className="w-full" tabIndex={0}>
+            Download CV
+          </Button>
+        </a>
+      </li>
+    </ul>
+  </div>
 </header>
+
+<style>
+  /* Mobile menu states */
+  .mobile-menu-closed {
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.25s ease;
+  }
+
+  .mobile-menu-open {
+    max-height: 500px;
+    opacity: 1;
+    transition:
+      max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.25s ease;
+  }
+
+  /* Staggered item reveal when menu opens */
+  .mobile-menu-open .mobile-nav-link {
+    animation: slide-in 0.25s ease both;
+    animation-delay: var(--delay, 0ms);
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Hamburger → X transformation */
+  :global([aria-expanded="true"]) .hamburger-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+  :global([aria-expanded="true"]) .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  :global([aria-expanded="true"]) .hamburger-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Active nav link highlight based on scroll position */
+  :global(.nav-link.active) {
+    color: var(--foreground);
+  }
+  :global(.nav-link.active::after) {
+    width: 80%;
+  }
+
+  /* Header shadow on scroll */
+  :global(.header-scrolled) {
+    box-shadow: 0 1px 16px oklch(0 0 0 / 8%);
+  }
+</style>
+
+<script>
+  const header = document.getElementById("app-header")
+  const hamburgerBtn = document.getElementById("hamburger-btn")
+  const mobileMenu = document.getElementById("mobile-menu")
+  const mobileLinks = mobileMenu?.querySelectorAll("a[href^='#']")
+  const desktopLinks = document.querySelectorAll(".nav-link")
+
+  // --- Hamburger toggle ---
+  hamburgerBtn?.addEventListener("click", () => {
+    const isOpen = hamburgerBtn.getAttribute("aria-expanded") === "true"
+    hamburgerBtn.setAttribute("aria-expanded", String(!isOpen))
+    mobileMenu?.classList.toggle("mobile-menu-closed", isOpen)
+    mobileMenu?.classList.toggle("mobile-menu-open", !isOpen)
+  })
+
+  // Close mobile menu on link click
+  mobileLinks?.forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburgerBtn?.setAttribute("aria-expanded", "false")
+      mobileMenu?.classList.add("mobile-menu-closed")
+      mobileMenu?.classList.remove("mobile-menu-open")
+    })
+  })
+
+  // Close mobile menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (
+      hamburgerBtn &&
+      mobileMenu &&
+      !hamburgerBtn.contains(e.target as Node) &&
+      !mobileMenu.contains(e.target as Node)
+    ) {
+      hamburgerBtn.setAttribute("aria-expanded", "false")
+      mobileMenu.classList.add("mobile-menu-closed")
+      mobileMenu.classList.remove("mobile-menu-open")
+    }
+  })
+
+  // --- Scroll shadow ---
+  window.addEventListener("scroll", () => {
+    header?.classList.toggle("header-scrolled", window.scrollY > 10)
+  })
+
+  // --- Active section highlighting ---
+  const sectionIds = [
+    "projects",
+    "work-experience",
+    "skills",
+    "about",
+    "contact",
+  ]
+
+  const observerOptions: IntersectionObserverInit = {
+    root: null,
+    rootMargin: "-40% 0px -55% 0px",
+    threshold: 0,
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute("id")
+        desktopLinks.forEach((link) => {
+          const href = link.getAttribute("href")
+          link.classList.toggle("active", href === `#${id}`)
+        })
+      }
+    })
+  }, observerOptions)
+
+  sectionIds.forEach((id) => {
+    const el = document.getElementById(id)
+    if (el) observer.observe(el)
+  })
+</script>
