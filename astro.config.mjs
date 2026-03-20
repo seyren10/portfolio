@@ -15,6 +15,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: 'https://gagarinroyvictor.site',
+  site: 'https://seyren10.github.io',
+  base: '/portfolio',
   integrations: [react(), lenis(), robotsTxt(), sitemap()],
 })

@@ -1,8 +1,8 @@
-# Roy Victor Gagarin — Portfolio
+# My Portfolio — Roy Victor Gagarin
 
-Personal portfolio website for **Roy Victor Gagarin**, a Full-Stack Web Developer with 2.5+ years of experience building web-based systems, internal tools, and RESTful APIs.
+My personal portfolio website. I'm a Full-Stack Web Developer with 2.5+ years of experience building web-based systems, internal tools, and RESTful APIs.
 
-🌐 **Live site:** [gagarinroyvictor.site](https://gagarinroyvictor.site)
+🌐 **Live site:** [seyren10.github.io](https://seyren10.github.io)
 
 ---
 
@@ -69,7 +69,7 @@ portfolio/
 
 ## Sections
 
-The portfolio is a single-page application with the following sections, each accessible via the navigation:
+My portfolio is a single-page application with the following sections, each accessible via the navigation:
 
 - **Hero** — introduction, availability badge, social links, and CV download
 - **Projects** (`#projects`) — featured work with screenshots and tech badges
@@ -141,8 +141,8 @@ Key accent color: **blue-500** (`#3b82f6`) used for headings, highlights, and in
 
 ## License
 
-This project is personal and not licensed for reuse. Feel free to use it as inspiration for your own portfolio.
+This is my personal project and is not licensed for reuse. Feel free to use it as inspiration for your own portfolio.
 
 ---
 
-> Built with ☕ by [Roy Victor Gagarin](https://github.com/seyren10)
+> Built with ☕ by me — [GitHub](https://github.com/seyren10) · [LinkedIn](https://www.linkedin.com/in/roy-gagarin-38b790261)
