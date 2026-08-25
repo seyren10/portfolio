@@ -2,7 +2,7 @@
 
 My personal portfolio website. I'm a Full-Stack Web Developer with 2.5+ years of experience building web-based systems, internal tools, and RESTful APIs.
 
-🌐 **Live site:** [seyren10.github.io](https://seyren10.github.io)
+🌐 **Live site:** [rvgagarin.xyz](https://rvgagarin.xyz)
 
 ---
 
