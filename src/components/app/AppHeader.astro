@@ -191,6 +191,14 @@ const links = [
     background-color: color-mix(in oklab, var(--background) 88%, transparent);
     backdrop-filter: blur(10px);
   }
+
+  @media (max-width: 767px) {
+    :global(#app-header) {
+      background-color: color-mix(in oklab, var(--background) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom-color: var(--border);
+    }
+  }
 </style>
 
 <script>
