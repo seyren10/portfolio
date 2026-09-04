@@ -1,55 +1,70 @@
-<section id="about" class="scroll-m-20 p-4 md:p-0">
-  <div
-    class="container mx-auto max-w-4xl space-y-8 py-16 text-center"
-    data-stagger="200"
-  >
-    <h2 class="text-4xl font-bold text-blue-500 md:text-5xl">About Me</h2>
-    <p class="text-lg text-slate-600 dark:text-slate-400" data-reveal="bottom">
-      I'm a Full-Stack Web Developer with 2.5 years of experience building
-      web-based systems and applications. I mainly work with Laravel and Node.js
-      on the backend, and Vue and React on the frontend.
-    </p>
-    <p class="text-lg text-slate-600 dark:text-slate-400" data-reveal="bottom">
-      I enjoy building internal tools and RESTful APIs that simplify workflows
-      and solve real-world problems, and I continuously improve my skills by
-      working with modern technologies and practical use cases.
-    </p>
+---
+const stats = [
+  {
+    value: "2.5+",
+    label: "Years experience",
+    note: "Building modern web applications",
+  },
+  {
+    value: "5+",
+    label: "Projects completed",
+    note: "For clients and personal use",
+  },
+  { value: "6+", label: "Core stack", note: "Full-stack technologies" },
+]
+---
 
-    <ul class="mt-10 grid gap-6 text-left md:grid-cols-3" data-reveal="bottom" data-stagger="200">
-      <li
-        class="rounded-lg border bg-background p-4 shadow-sm"
-        data-reveal="scale"
-        data-delay="600" 
+<section id="about" class="scroll-m-20 px-4 md:px-0">
+  <div class="container mx-auto max-w-4xl space-y-10 py-24">
+    <div class="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
+      <p
+        class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+        data-reveal="left"
       >
-        <h3 class="text-4xl font-bold text-blue-500">2.5+</h3>
-        <p class="mt-2 text-sm font-medium">Years Experience</p>
-        <p class="text-sm text-slate-600 dark:text-slate-400">
-          Building modern web applications
+        About
+      </p>
+      <div class="space-y-6">
+        <h2
+          class="max-w-2xl text-3xl font-bold text-balance md:text-4xl"
+          data-reveal="bottom"
+        >
+          A full-stack developer who likes making messy workflows simple.
+        </h2>
+        <p
+          class="max-w-2xl text-lg leading-relaxed text-muted-foreground"
+          data-reveal="bottom"
+        >
+          I'm a Full-Stack Web Developer with 2.5 years of experience building
+          web-based systems and applications. I mainly work with Laravel and
+          Node.js on the backend, and Vue and React on the frontend.
         </p>
-      </li>
-      <li
-        class="rounded-lg border bg-background p-4 shadow-sm"
-        data-reveal="scale"
-        data-delay="600" 
-      >
-        <h3 class="text-4xl font-bold text-blue-500">5+</h3>
-        <p class="mt-2 text-sm font-medium">Projects Completed</p>
-        <p class="text-sm text-slate-600 dark:text-slate-400">
-          Successfully delivered web applications for clients and personal
-          projects
+        <p
+          class="max-w-2xl text-lg leading-relaxed text-muted-foreground"
+          data-reveal="bottom"
+        >
+          I enjoy building internal tools and RESTful APIs that simplify
+          workflows and solve real-world problems, and I continuously improve my
+          skills by working with modern technologies and practical use cases.
         </p>
-      </li>
-      <li
-        class="rounded-lg border bg-background p-4 shadow-sm"
-        data-reveal="scale"
-        data-delay="600" 
-      >
-        <h3 class="text-4xl font-bold text-blue-500">6+</h3>
-        <p class="mt-2 text-sm font-medium">Tech Stack</p>
-        <p class="text-sm text-slate-600 dark:text-slate-400">
-          Full-stack Technologies
-        </p>
-      </li>
-    </ul>
+      </div>
+    </div>
+
+    <dl
+      class="grid divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+      data-reveal="bottom"
+      data-delay="200"
+    >
+      {
+        stats.map((stat) => (
+          <div class="space-y-1 py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0">
+            <dt class="font-mono text-4xl font-bold text-primary tabular-nums md:text-5xl">
+              {stat.value}
+            </dt>
+            <dd class="text-sm font-semibold">{stat.label}</dd>
+            <dd class="text-sm text-muted-foreground">{stat.note}</dd>
+          </div>
+        ))
+      }
+    </dl>
   </div>
 </section>

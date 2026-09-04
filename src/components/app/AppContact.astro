@@ -1,98 +1,110 @@
 ---
-import { Call02Icon, Email, Location, Phone } from "@hugeicons/core-free-icons"
+import { Call02Icon, Email, Location } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Button } from "@/components/ui/button"
+
+const channels = [
+  {
+    icon: Email,
+    label: "Email",
+    value: "gagarinroyvictor@gmail.com",
+    href: "mailto:gagarinroyvictor@gmail.com",
+  },
+  {
+    icon: Call02Icon,
+    label: "Phone",
+    value: "(+63) 956 304 0025",
+    href: "tel:+639563040025",
+  },
+  {
+    icon: Location,
+    label: "Location",
+    value: "San Nicolas, Victoria, Tarlac, PH",
+    href: null,
+  },
+]
 ---
 
-<section id="contact" class="scroll-m-20 p-4 md:p-0">
-  <div class="container mx-auto max-w-4xl space-y-12 py-16 text-center">
-    <h2 class="text-4xl font-bold text-blue-500 md:text-5xl">Get In Touch</h2>
+<section id="contact" class="scroll-m-20 px-4 md:px-0">
+  <div class="container mx-auto max-w-4xl space-y-14 py-24">
+    <div class="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
+      <p
+        class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+        data-reveal="left"
+      >
+        Contact
+      </p>
+      <h2
+        class="max-w-2xl text-3xl font-bold text-balance md:text-4xl"
+        data-reveal="bottom"
+      >
+        Get In Touch
+      </h2>
+    </div>
 
-    <ul class="mt-10 grid gap-6 text-left md:grid-cols-3" data-stagger="200">
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
-        <div class="flex items-center gap-3">
-          <div
-            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
+    <ul
+      class="grid divide-y divide-border border-y border-border sm:grid-cols-3 sm:divide-x sm:divide-y-0"
+      data-stagger="150"
+    >
+      {
+        channels.map((channel) => (
+          <li
+            class="space-y-3 py-6 sm:px-6 first:sm:pl-0 last:sm:pr-0"
+            data-reveal="bottom"
           >
-            <HugeiconsIcon icon={Email} />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold">Email</h3>
-            <p class="text-slate-600 dark:text-slate-400">
-              Get in touch via email
-            </p>
-          </div>
-        </div>
-        <a
-          href="mailto:gagarinroyvictor@gmail.com"
-          class="font-bold text-blue-500 hover:underline"
-        >
-          gagarinroyvictor@gmail.com
-        </a>
-      </li>
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
-        <div class="flex items-center gap-3">
-          <div
-            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
-          >
-            <HugeiconsIcon icon={Call02Icon} />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold">Phone</h3>
-            <p class="text-slate-600 dark:text-slate-400">Call me anytime</p>
-          </div>
-        </div>
-        <a
-          href="tel:+639563040025"
-          class="font-bold text-blue-500 hover:underline"
-        >
-          (+63) 956 304 0025
-        </a>
-      </li>
-      <li class="space-y-4 rounded-lg border bg-background p-4 shadow-sm" data-reveal="scale">
-        <div class="flex items-center gap-3">
-          <div
-            class="grid size-10 place-content-center rounded-xl bg-blue-500/30 text-blue-500"
-          >
-            <HugeiconsIcon icon={Location} />
-          </div>
-          <div>
-            <h3 class="text-xl font-bold">Location</h3>
-            <p class="text-slate-600 dark:text-slate-400">
-              Based in Tarlac, PH
-            </p>
-          </div>
-        </div>
-        <span class="font-bold text-blue-500">
-          San Nicolas, Victoria, Tarlac
-        </span>
-      </li>
+            <div class="flex items-center gap-2 text-muted-foreground">
+              <HugeiconsIcon icon={channel.icon} className="size-4" />
+              <span class="font-mono text-xs tracking-widest uppercase">
+                {channel.label}
+              </span>
+            </div>
+            {channel.href ? (
+              <a
+                href={channel.href}
+                class="block font-semibold break-words text-foreground transition-colors hover:text-primary"
+              >
+                {channel.value}
+              </a>
+            ) : (
+              <span class="block font-semibold break-words">
+                {channel.value}
+              </span>
+            )}
+          </li>
+        ))
+      }
     </ul>
 
     <div
-      class="contact-bg relative isolate space-y-4 overflow-hidden rounded-xl bg-background md:p-20 p-6"
+      class="relative isolate space-y-5 bg-primary p-8 text-primary-foreground md:p-16"
       data-reveal="bottom"
-      data-delay="600"
+      data-delay="200"
     >
-      <h3 class="text-3xl font-bold md:text-5xl">
+      <h3 class="max-w-xl text-3xl font-bold text-balance md:text-5xl">
         Ready to build something amazing?
       </h3>
       <p
-        class="mx-auto max-w-[65ch] text-base leading-relaxed text-balance text-slate-600 md:text-lg dark:text-slate-200"
+        class="max-w-[60ch] text-base leading-relaxed text-balance opacity-80 md:text-lg"
       >
         I'm always open to discussing new projects, creative ideas or
         opportunities to be part of your vision.
       </p>
-      <div class="flex items-center justify-center gap-4">
+      <div class="flex flex-wrap items-center gap-4 pt-2">
         <a href="mailto:gagarinroyvictor@gmail.com">
-          <Button client:visible size="lg"> Send me an email </Button>
+          <Button
+            client:visible
+            size="lg"
+            className="bg-background text-foreground hover:bg-background/85"
+          >
+            Send me an email
+          </Button>
         </a>
         <a href="/Roy_Victor_Gagarin_CV.pdf" download>
           <Button
             client:visible
             size="lg"
             variant="outline"
-            className="border-primary text-primary hover:bg-primary/10 hover:text-primary dark:text-primary-foreground"
+            className="border-primary-foreground/30 bg-transparent text-primary-foreground hover:bg-primary-foreground/10"
           >
             Download CV
           </Button>
@@ -101,21 +113,3 @@ import { Button } from "@/components/ui/button"
     </div>
   </div>
 </section>
-
-<style>
-  .contact-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background-color: var(--background);
-    opacity: 0.3;
-    background-image:
-      repeating-radial-gradient(
-        circle at 0 0,
-        transparent 0,
-        var(--background) 40px
-      ),
-      repeating-linear-gradient(var(--background), var(--color-blue-500));
-  }
-</style>

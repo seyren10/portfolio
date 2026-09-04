@@ -1,72 +1,93 @@
 ---
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  ArrowDown01Icon,
   ArrowRight01Icon,
+  ArrowUpRight01Icon,
   GithubIcon,
   Linkedin02Icon,
   Mail01Icon,
 } from "@hugeicons/core-free-icons"
+
+const sections = [
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#work-experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
+]
 ---
 
 <section
-  class="relative container mx-auto grid min-h-svh place-content-center p-4 text-center md:p-0"
+  class="relative container mx-auto grid min-h-svh items-center gap-16 px-4 pt-28 pb-20 md:px-0 lg:grid-cols-[1fr_20rem] lg:gap-12"
 >
-  <div class="space-y-4" data-stagger="200">
-    <Badge
-      client:load
-      variant="outline"
-      className="bg-background py-3 text-sm text-slate-600 dark:text-slate-400"
-      ><div class="relative size-2 rounded-full bg-green-400">
-        <div class="absolute inset-0 animate-ping rounded-full bg-green-400">
-        </div>
-      </div>Available for Collaboration
-    </Badge>
-    <h1 class="text-5xl leading-tight font-bold text-balance md:text-7xl" data-reveal="bottom">
+  <div class="space-y-7" data-stagger="150">
+    <div
+      class="inline-flex items-center gap-2 font-mono text-xs tracking-widest text-muted-foreground uppercase"
+      data-reveal="bottom"
+    >
+      <span class="relative flex size-1.5">
+        <span
+          class="absolute inset-0 animate-subtle-pulse rounded-full bg-emerald-500"
+        ></span>
+      </span>
+      Available for collaboration
+    </div>
+
+    <h1
+      class="text-6xl leading-[0.95] font-bold text-balance md:text-8xl"
+      data-reveal="bottom"
+    >
       Roy Gagarin
     </h1>
-    <h2 class="text-3xl font-bold text-blue-500 md:text-4xl" data-reveal="bottom">
-      Full Stack Developer
+
+    <h2
+      class="font-mono text-lg tracking-tight text-primary md:text-2xl"
+      data-reveal="bottom"
+    >
+      Full&nbsp;Stack&nbsp;Developer
     </h2>
+
     <p
-      class="mx-auto max-w-2xl text-lg leading-relaxed text-balance text-slate-600 dark:text-slate-400"
+      class="max-w-xl text-lg leading-relaxed text-balance text-muted-foreground"
       data-reveal="bottom"
     >
       I specialize in building scalable web applications and web-based systems
-      using modern technologies like <strong class="text-blue-500"
-        >Laravel</strong
-      >, <strong class="text-blue-500">Node.js</strong>, <strong
-        class="text-blue-500">Vue</strong
-      >, and
-      <strong class="text-blue-500">React</strong>.
+      using modern technologies like
+      <strong class="font-semibold text-foreground">Laravel</strong>,
+      <strong class="font-semibold text-foreground">Node.js</strong>,
+      <strong class="font-semibold text-foreground">Vue</strong>, and
+      <strong class="font-semibold text-foreground">React</strong>.
     </p>
-    <div class="flex items-center justify-center gap-6" data-reveal="bottom">
+
+    <div class="flex flex-wrap items-center gap-4 pt-2" data-reveal="bottom">
       <a href="#projects">
-        <Button client:load variant="default" className="group pl-4" tabIndex={0}>
-          <span> View Projects </span>
+        <Button
+          client:load
+          variant="default"
+          size="lg"
+          className="group pl-5"
+          tabIndex={0}
+        >
+          <span>View Projects</span>
           <HugeiconsIcon
             icon={ArrowRight01Icon}
             className="duration-300 group-hover:translate-x-1"
-          /></Button
-        >
+          />
+        </Button>
       </a>
       <a href="#contact">
-        <Button
-          client:load
-          variant="outline"
-          className="border-primary text-primary dark:text-primary-foreground hover:bg-primary/10 hover:text-primary"
-        >
+        <Button client:load variant="outline" size="lg" tabIndex={0}>
           Get In Touch
         </Button>
       </a>
     </div>
-    <div class="mt-6 flex items-center justify-center gap-4" data-reveal="bottom">
+
+    <div class="flex items-center gap-3 pt-2" data-reveal="bottom">
       <a
         href="https://github.com/seyren10"
         target="_blank"
-        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+        class="flex size-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
         aria-label="GitHub"
       >
         <HugeiconsIcon icon={GithubIcon} className="size-5" />
@@ -75,24 +96,64 @@ import {
         href="https://www.linkedin.com/in/roy-gagarin-38b790261"
         target="_blank"
         aria-label="LinkedIn"
-        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+        class="flex size-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
       >
         <HugeiconsIcon icon={Linkedin02Icon} className="size-5" />
       </a>
       <a
         href="mailto:gagarinroyvictor@gmail.com"
         aria-label="email"
-        class="flex size-12 items-center justify-center rounded-lg border border-slate-200 bg-background text-slate-600 shadow hover:border-blue-500 hover:text-blue-500 dark:border-slate-700 dark:text-slate-400 dark:hover:border-blue-400 dark:hover:text-blue-400"
+        class="flex size-11 items-center justify-center border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
       >
         <HugeiconsIcon icon={Mail01Icon} className="size-5" />
       </a>
     </div>
-    <div
-      class="absolute bottom-20 left-1/2 flex -translate-x-1/2 animate-bounce flex-col items-center justify-center gap-2 text-xs text-slate-600 dark:text-slate-400"
-      data-reveal="bottom"
+  </div>
+
+  <!-- Index rail — doubles as in-page navigation -->
+  <nav
+    class="hidden lg:block"
+    aria-label="Page sections"
+    data-reveal="left"
+    data-delay="300"
+  >
+    <p
+      class="mb-1 font-mono text-xs tracking-widest text-muted-foreground/70 uppercase"
     >
-      <span>Scroll to explore</span>
-      <HugeiconsIcon icon={ArrowDown01Icon} />
-    </div>
+      On this page
+    </p>
+    <ul>
+      {
+        sections.map(({ label, href }, i) => (
+          <li class="border-t border-border first:border-t-0">
+            <a
+              href={href}
+              class="group flex items-center justify-between gap-4 py-4 transition-colors"
+            >
+              <span class="flex items-baseline gap-4">
+                <span class="font-mono text-xs text-muted-foreground/50 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span class="text-base font-medium text-foreground/80 group-hover:text-primary">
+                  {label}
+                </span>
+              </span>
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                className="size-4 text-muted-foreground/40 opacity-0 -translate-x-1 transition-all duration-200 group-hover:translate-x-0 group-hover:text-primary group-hover:opacity-100"
+              />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  <div
+    class="absolute bottom-10 left-4 flex items-center gap-3 font-mono text-xs tracking-widest text-muted-foreground/60 uppercase md:left-0"
+    data-reveal="bottom"
+  >
+    <span class="h-8 w-px animate-subtle-pulse bg-border"></span>
+    Scroll
   </div>
 </section>
