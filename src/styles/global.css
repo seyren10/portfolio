@@ -25,12 +25,12 @@
   --destructive: oklch(0.55 0.19 27);
   --border: oklch(0.85 0.012 75);
   --input: oklch(0.9 0.01 75);
-  --ring: oklch(0.64 0.16 46);
-  --chart-1: oklch(0.64 0.16 46);
-  --chart-2: oklch(0.58 0.14 46);
-  --chart-3: oklch(0.5 0.12 46);
-  --chart-4: oklch(0.42 0.1 46);
-  --chart-5: oklch(0.34 0.08 46);
+  --ring: oklch(0.5148 0.2474 282.36);
+  --chart-1: oklch(0.5148 0.2474 282.36);
+  --chart-2: oklch(0.4664 0.2165 282.36);
+  --chart-3: oklch(0.402 0.1856 282.36);
+  --chart-4: oklch(0.3377 0.1546 282.36);
+  --chart-5: oklch(0.2734 0.1237 282.36);
   --radius: 0.3rem;
   --sidebar: oklch(0.965 0.008 75);
   --sidebar-foreground: oklch(0.19 0.015 265);
@@ -39,12 +39,12 @@
   --sidebar-accent: oklch(0.93 0.009 75);
   --sidebar-accent-foreground: oklch(0.19 0.015 265);
   --sidebar-border: oklch(0.85 0.012 75);
-  --sidebar-ring: oklch(0.64 0.16 46);
+  --sidebar-ring: oklch(0.5148 0.2474 282.36);
 
-  /* Single decisive accent: molten copper. Text on it is ink, not white —
-     the two together read like hazard signage, on purpose. */
-  --brand: oklch(0.64 0.16 46);
-  --brand-foreground: oklch(0.16 0.01 265);
+  /* Single decisive accent: electric violet (#5e3bed). Text on it is
+     near-white, since the hue sits mid-dark and needs the lift. */
+  --brand: oklch(0.5148 0.2474 282.36);
+  --brand-foreground: oklch(0.98 0.0065 75);
 }
 
 .dark {
@@ -65,22 +65,22 @@
   --destructive: oklch(0.65 0.19 25);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.7 0.16 46);
-  --chart-1: oklch(0.7 0.16 46);
-  --chart-2: oklch(0.62 0.15 46);
-  --chart-3: oklch(0.54 0.13 46);
-  --chart-4: oklch(0.46 0.11 46);
-  --chart-5: oklch(0.38 0.09 46);
+  --ring: oklch(0.62 0.2 282.36);
+  --chart-1: oklch(0.62 0.2 282.36);
+  --chart-2: oklch(0.549 0.1875 282.36);
+  --chart-3: oklch(0.478 0.1625 282.36);
+  --chart-4: oklch(0.407 0.1375 282.36);
+  --chart-5: oklch(0.337 0.1125 282.36);
   --sidebar: oklch(0.19 0.009 265);
   --sidebar-foreground: oklch(0.94 0.01 75);
-  --sidebar-primary: oklch(0.7 0.16 46);
+  --sidebar-primary: oklch(0.62 0.2 282.36);
   --sidebar-primary-foreground: oklch(0.16 0.01 265);
   --sidebar-accent: oklch(0.27 0.01 265);
   --sidebar-accent-foreground: oklch(0.94 0.01 75);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.7 0.16 46);
+  --sidebar-ring: oklch(0.62 0.2 282.36);
 
-  --brand: oklch(0.7 0.16 46);
+  --brand: oklch(0.62 0.2 282.36);
   --brand-foreground: oklch(0.14 0.008 265);
 }
 
