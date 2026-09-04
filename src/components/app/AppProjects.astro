@@ -12,13 +12,18 @@ import RedisIcon from "@/assets/Redis.svg"
 import VuejsIcon from "@/assets/vuejs.svg"
 import PiniaIcon from "@/assets/pinia.svg"
 import SocketIOIcon from "@/assets/Socket.io.svg"
+import NginxIcon from "@/assets/nginx.svg"
 import VuetifyIcon from "@/assets/brand-vuetify-svgrepo-com.svg"
+import TypeScriptIcon from "@/assets/typescript-icon-svgrepo-com.svg"
+import TailwindCssIcon from "@/assets/tailwind-css.svg"
+import TanStackIcon from "@/assets/tanstack.svg"
 import { Button } from "@/components/ui/button"
 import { Github, Share04Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { ServifiLinks } from "@/components/ServifiLinks"
 import { AMSGallery } from "@/components/AMSGallery"
 import { ServifiGallery } from "@/components/ServifiGallery"
+import { PuyoGallery } from "@/components/PuyoGallery"
 ---
 
 <section id="projects" class="scroll-m-20 px-4 md:px-0">
@@ -46,7 +51,105 @@ import { ServifiGallery } from "@/components/ServifiGallery"
               <p
                 class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
               >
-                01 &middot; Internal tooling
+                01 &middot; Fintech / ROSCA platform
+              </p>
+              <h3 class="mt-1 text-2xl font-bold">Puyo</h3>
+              <p class="mt-1 text-muted-foreground">
+                A full-stack app for running a paluwagan (ROSCA), replacing the
+                group chat and notebook tracking most organizers rely on with
+                one place to manage members, contributions, and payout rounds.
+              </p>
+            </div>
+            <div class="space-y-2">
+              <p class="text-sm font-semibold">Key Features</p>
+              <ul
+                class="ml-4 list-disc space-y-1 text-sm text-muted-foreground marker:text-primary"
+              >
+                <li>
+                  Auto-generated payout rounds and drag-and-drop member ordering
+                </li>
+                <li>
+                  Per-member ledger with running balance and a
+                  headless-Chrome-rendered PDF export
+                </li>
+                <li>
+                  Co-manage groups with other trusted people via share requests
+                  and a per-group activity feed
+                </li>
+                <li>
+                  Automated email reminders for members with an upcoming cycle
+                  payment
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-wrap items-center gap-2.5">
+              <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
+              <AppBadge src={MySqlIcon} alt="MySQL">MySQL</AppBadge>
+              <AppBadge src={RedisIcon} alt="Redis">Redis</AppBadge>
+              <AppBadge src={NginxIcon} alt="Nginx">Nginx</AppBadge>
+              <AppBadge src={VuejsIcon} alt="Vue.js">Vue.js</AppBadge>
+              <AppBadge src={TypeScriptIcon} alt="TypeScript"
+                >TypeScript</AppBadge
+              >
+              <AppBadge src={PiniaIcon} alt="Pinia.js">Pinia.js</AppBadge>
+              <AppBadge src={TanStackIcon} alt="TanStack Query"
+                >TanStack Query</AppBadge
+              >
+              <AppBadge src={TailwindCssIcon} alt="Tailwind CSS"
+                >Tailwind CSS</AppBadge
+              >
+            </div>
+          </div>
+          <div class="order-1 overflow-hidden border border-border md:order-2">
+            <PuyoGallery client:load />
+          </div>
+        </div>
+
+        <hr class="border-border" />
+        <div class="flex flex-wrap items-center gap-4 p-6 md:p-8">
+          <a
+            href="https://puyo.rvgagarin.xyz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button client:visible>
+              <HugeiconsIcon icon={Share04Icon} className="size-4" />
+              Live Site
+            </Button>
+          </a>
+          <a
+            href="https://github.com/seyren10/puyo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button client:visible variant="outline">
+              <HugeiconsIcon icon={Github} className="size-4" />
+              View Code
+            </Button>
+          </a>
+        </div>
+
+        <div class="flex flex-col gap-2 p-6 md:p-8">
+          <p class="text-muted-foreground text-sm">Upvote my app</p>
+          <iframe
+            src="https://appbuildersph.com/embed/apps/puyo"
+            title="Puyo votes on App Builders PH"
+            width="320"
+            height="72"
+            style="border:0"
+            loading="lazy"
+            scrolling="no"></iframe>
+        </div>
+      </li>
+
+      <li class="border border-border bg-card" data-reveal="bottom">
+        <div class="grid gap-6 p-6 md:grid-cols-[1fr_20rem] md:p-8">
+          <div class="order-2 space-y-4 md:order-1">
+            <div>
+              <p
+                class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+              >
+                02 &middot; Internal tooling
               </p>
               <h3 class="mt-1 text-2xl font-bold">Asset Management System</h3>
               <p class="mt-1 text-muted-foreground">
@@ -102,7 +205,7 @@ import { ServifiGallery } from "@/components/ServifiGallery"
               <p
                 class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
               >
-                02 &middot; Restaurant tech
+                03 &middot; Restaurant tech
               </p>
               <h3 class="mt-1 text-2xl font-bold">Servifi</h3>
               <p class="mt-1 text-muted-foreground">
