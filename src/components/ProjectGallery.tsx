@@ -1,7 +1,6 @@
 import * as React from "react"
 import {
   Dialog,
-  DialogClose,
   DialogContent,
   DialogDescription,
   DialogTitle,
@@ -14,8 +13,6 @@ import {
   CarouselNext,
   type CarouselApi,
 } from "@/components/ui/carousel"
-import { HugeiconsIcon } from "@hugeicons/react"
-import { Cancel01Icon } from "@hugeicons/core-free-icons"
 import { cn } from "@/lib/utils"
 
 type ImageSource = { src: string } | string
@@ -34,23 +31,6 @@ type ProjectGalleryProps = {
 
 function resolveSrc(src: ImageSource) {
   return typeof src === "string" ? src : src.src
-}
-
-function GalleryCloseButton() {
-  return (
-    <DialogClose asChild>
-      <button
-        className="absolute top-3 right-3 z-20 grid size-9 place-items-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-colors hover:bg-black/70 sm:top-5 sm:right-5"
-        aria-label="Close gallery"
-      >
-        <HugeiconsIcon
-          icon={Cancel01Icon}
-          className="size-4"
-          strokeWidth={2}
-        />
-      </button>
-    </DialogClose>
-  )
 }
 
 export function ProjectGallery({
@@ -82,8 +62,9 @@ export function ProjectGallery({
         onClick={() => setOpen(true)}
         aria-label={`Open ${name} screenshot gallery`}
         className={cn(
-          "group relative block h-full w-full cursor-zoom-in overflow-hidden",
-          className
+          "group relative block cursor-zoom-in overflow-hidden",
+          className,
+          "mx-auto aspect-square w-full max-w-xs"
         )}
       >
         <img
@@ -97,48 +78,54 @@ export function ProjectGallery({
         />
       </button>
 
+      {/* Frameless lightbox: only the screenshot itself is rendered, no
+         card/background/border around it. Clicking anywhere that isn't the
+         image (or a control) dismisses the dialog, same as clicking the
+         backdrop. */}
       <DialogContent
         showCloseButton={false}
-        className="h-[85vh] w-[94vw] max-w-[1600px] gap-0 overflow-hidden rounded-2xl border-0 bg-background p-0 ring-1 ring-foreground/10 sm:h-[90vh] sm:w-[90vw]"
+        className="h-[85vh] w-[94vw] max-w-[1600px] gap-0 overflow-visible rounded-none border-0 bg-transparent p-0 shadow-none ring-0 outline-none sm:h-[90vh] sm:w-[90vw] sm:max-w-[1600px]"
       >
         <DialogTitle className="sr-only">{name} screenshots</DialogTitle>
         <DialogDescription className="sr-only">
           Screenshot gallery for {name}
         </DialogDescription>
 
-        <Carousel setApi={setApi} className="relative h-full">
+        <Carousel setApi={setApi} className="relative h-full w-full">
           <CarouselContent className="ml-0 h-full">
             {images.map((image, index) => (
               <CarouselItem
                 key={index}
-                className="flex h-[85vh] items-center justify-center bg-background pl-0 sm:h-[90vh]"
+                className="flex h-[85vh] items-center justify-center pl-0 sm:h-[90vh]"
+                onClick={(event) => {
+                  if (event.target === event.currentTarget) setOpen(false)
+                }}
               >
                 <img
                   src={resolveSrc(image.src)}
                   alt={image.alt}
                   className="max-h-full max-w-full object-contain"
+                  draggable={false}
                 />
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          <GalleryCloseButton />
-
           {hasMultiple && (
             <>
               <CarouselPrevious
                 size="icon"
-                className="left-3 size-9 border-border bg-card/90 text-foreground shadow-lg backdrop-blur hover:bg-card sm:size-11 sm:left-5"
+                className="-left-2 size-9 border-0 bg-background/80 text-foreground shadow-lg backdrop-blur hover:bg-background sm:-left-6 sm:size-11 md:-left-10 lg:-left-14"
               />
               <CarouselNext
                 size="icon"
-                className="right-3 size-9 border-border bg-card/90 text-foreground shadow-lg backdrop-blur hover:bg-card sm:size-11 sm:right-5"
+                className="-right-2 size-9 border-0 bg-background/80 text-foreground shadow-lg backdrop-blur hover:bg-background sm:-right-6 sm:size-11 md:-right-10 lg:-right-14"
               />
             </>
           )}
 
           {hasMultiple && (
-            <div className="pointer-events-none absolute bottom-4 left-1/2 z-20 -translate-x-1/2 sm:bottom-5">
+            <div className="pointer-events-none absolute -bottom-10 left-1/2 z-20 -translate-x-1/2 sm:-bottom-14">
               <span className="rounded-full border border-border bg-card px-4 py-1.5 font-mono text-[11px] tracking-widest text-muted-foreground uppercase shadow-sm">
                 Screenshot {current + 1} of {images.length}
               </span>
