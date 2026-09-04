@@ -21,29 +21,43 @@ import { AMSGallery } from "@/components/AMSGallery"
 import { ServifiGallery } from "@/components/ServifiGallery"
 ---
 
-<section id="projects" class="scroll-m-20 p-4 md:p-0">
-  <div class="container mx-auto max-w-4xl space-y-8 py-16">
-    <h2 class="text-center text-4xl font-bold text-blue-500 md:text-5xl">
-      Projects
-    </h2>
+<section id="projects" class="scroll-m-20 px-4 md:px-0">
+  <div class="container mx-auto max-w-4xl space-y-10 py-24">
+    <div class="grid gap-10 md:grid-cols-[auto_1fr] md:gap-16">
+      <p
+        class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+        data-reveal="left"
+      >
+        Work
+      </p>
+      <h2
+        class="max-w-2xl text-3xl font-bold text-balance md:text-4xl"
+        data-reveal="bottom"
+      >
+        Projects
+      </h2>
+    </div>
 
     <ul class="space-y-6" data-stagger="200">
-      <li class="rounded-lg border bg-background shadow" data-reveal="right">
-        <div class="grid gap-4 p-4 md:grid-cols-[1fr_20rem]">
+      <li class="border border-border bg-card" data-reveal="bottom">
+        <div class="grid gap-6 p-6 md:grid-cols-[1fr_20rem] md:p-8">
           <div class="order-2 space-y-4 md:order-1">
             <div>
-              <h3 class="text-2xl leading-loose font-bold">
-                Asset Management System
-              </h3>
-              <p class="text-slate-600 dark:text-slate-400">
+              <p
+                class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+              >
+                01 &middot; Internal tooling
+              </p>
+              <h3 class="mt-1 text-2xl font-bold">Asset Management System</h3>
+              <p class="mt-1 text-muted-foreground">
                 A web-based system developed to manage and track company assets
                 such as laptops, PCs, and tablets.
               </p>
             </div>
             <div class="space-y-2">
-              <p class="font-medium">Key Features:</p>
+              <p class="text-sm font-semibold">Key Features</p>
               <ul
-                class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+                class="ml-4 list-disc space-y-1 text-sm text-muted-foreground marker:text-primary"
               >
                 <li>Tracks asset assignment to employees</li>
                 <li>Maintains history of previous asset ownership</li>
@@ -53,7 +67,7 @@ import { ServifiGallery } from "@/components/ServifiGallery"
                 <li>Provides centralized management of company devices</li>
               </ul>
             </div>
-            <div class="flex flex-wrap items-center gap-4">
+            <div class="flex flex-wrap items-center gap-2.5">
               <AppBadge src={LaravelIcon} alt="Laravel">Laravel</AppBadge>
               <AppBadge src={MySqlIcon} alt="MySQL">MySQL</AppBadge>
               <AppBadge src={VuejsIcon} alt="Vue.js">Vue.js</AppBadge>
@@ -61,15 +75,13 @@ import { ServifiGallery } from "@/components/ServifiGallery"
               <AppBadge src={PiniaIcon} alt="Pinia.js">Pinia.js</AppBadge>
             </div>
           </div>
-          <div
-            class="order:1 overflow-hidden rounded-lg border shadow md:order-2"
-          >
+          <div class="order-1 overflow-hidden border border-border md:order-2">
             <AMSGallery client:load />
           </div>
         </div>
 
-        <hr class="mt-0!" />
-        <div class="p-4">
+        <hr class="border-border" />
+        <div class="p-6 md:p-8">
           <a
             href="https://github.com/seyren10/mkta-EIS"
             target="_blank"
@@ -82,21 +94,27 @@ import { ServifiGallery } from "@/components/ServifiGallery"
           </a>
         </div>
       </li>
-      <li class="rounded-lg border bg-background shadow" data-reveal="left">
-        <div class="grid gap-6 p-4 md:grid-cols-[1fr_20rem]">
+
+      <li class="border border-border bg-card" data-reveal="bottom">
+        <div class="grid gap-6 p-6 md:grid-cols-[1fr_20rem] md:p-8">
           <div class="order-2 space-y-4 md:order-1">
             <div>
-              <h3 class="text-2xl leading-loose font-bold">Servifi</h3>
-              <p class="text-slate-600 dark:text-slate-400">
+              <p
+                class="font-mono text-xs tracking-widest text-muted-foreground uppercase"
+              >
+                02 &middot; Restaurant tech
+              </p>
+              <h3 class="mt-1 text-2xl font-bold">Servifi</h3>
+              <p class="mt-1 text-muted-foreground">
                 A restaurant management system designed for Korean BBQ
                 restaurants offering unlimited dining, featuring QR-based
                 ordering and real-time table service.
               </p>
             </div>
             <div class="space-y-2">
-              <p class="font-medium">Key Features:</p>
+              <p class="text-sm font-semibold">Key Features</p>
               <ul
-                class="ml-4 list-disc space-y-1 text-sm text-slate-600 marker:text-primary dark:text-slate-400"
+                class="ml-4 list-disc space-y-1 text-sm text-muted-foreground marker:text-primary"
               >
                 <li>QR code-based ordering system for customers</li>
                 <li>
@@ -108,7 +126,7 @@ import { ServifiGallery } from "@/components/ServifiGallery"
                 <li>Dashboard with insights such as most ordered items</li>
               </ul>
             </div>
-            <div class="flex flex-wrap items-center gap-4">
+            <div class="flex flex-wrap items-center gap-2.5">
               <AppBadge src={NodeJsIcon} alt="Node.js">Node.js</AppBadge>
               <AppBadge src={ExpressIcon} alt="Express.js">Express.js</AppBadge>
               <AppBadge src={RedisIcon} alt="Redis">Redis</AppBadge>
@@ -122,14 +140,14 @@ import { ServifiGallery } from "@/components/ServifiGallery"
             </div>
           </div>
           <div
-            class="order-1 aspect-square overflow-hidden rounded-lg border shadow md:order-2"
+            class="order-1 aspect-square overflow-hidden border border-border md:order-2"
           >
             <ServifiGallery client:load />
           </div>
         </div>
 
-        <hr class="mt-0!" />
-        <div class="flex flex-wrap items-center gap-4 p-4">
+        <hr class="border-border" />
+        <div class="flex flex-wrap items-center gap-4 p-6 md:p-8">
           <ServifiLinks client:load />
           <a
             href="https://servifi-app.vercel.app/admin/signin"
@@ -142,12 +160,12 @@ import { ServifiGallery } from "@/components/ServifiGallery"
             </Button>
           </a>
           <div
-            class="inline-flex flex-wrap gap-2 rounded-xl border p-2 text-xs text-slate-600 dark:text-slate-400"
+            class="inline-flex flex-wrap gap-3 border border-border px-3 py-2 font-mono text-xs text-muted-foreground"
           >
             <span
-              >Username: <span class="font-medium">test@example.com</span></span
+              >user: <span class="text-foreground">test@example.com</span></span
             >
-            <span>Password: <span class="font-medium">password</span></span>
+            <span>pass: <span class="text-foreground">password</span></span>
           </div>
         </div>
       </li>

@@ -1,13 +1,11 @@
 ---
-import { Badge } from "@/components/ui/badge"
 import { Image } from "astro:assets"
 const { src, alt } = Astro.props
 ---
 
-<Badge
-  client:visible
-  className="flex items-center gap-2 bg-blue-500/10 p-4 text-base text-slate-600 dark:text-slate-400"
+<span
+  class="inline-flex items-center gap-1.5 border border-border bg-card px-2.5 py-1 font-mono text-xs text-muted-foreground transition-colors hover:border-primary/50 hover:text-foreground"
 >
-  {src && alt && <Image src={src} alt={alt} class="size-5 object-contain" />}
+  {src && alt && <Image src={src} alt={alt} class="size-3.5 object-contain" />}
   <slot />
-</Badge>
+</span>

@@ -1,6 +1,5 @@
 ---
 import "@/styles/global.css"
-import { BlobBackground } from "@/components/ui/blob-background"
 import { SEO } from "astro-seo"
 import "@polgubau/astro-reveal/styles"
 ---
@@ -44,11 +43,25 @@ import "@polgubau/astro-reveal/styles"
     />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="theme-color"
+      content="#f9f7f3"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#181820"
+      media="(prefers-color-scheme: dark)"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <title>Roy Victor Gagarin | Full Stack Developer</title>
   </head>
-  <body class="bg-pattern relative bg-background antialiased">
-    <BlobBackground client:load />
+  <body class="relative bg-background text-foreground antialiased">
+    <div
+      class="bg-grid pointer-events-none fixed inset-0 -z-10"
+      aria-hidden="true"
+    >
+    </div>
     <slot />
 
     <script>
